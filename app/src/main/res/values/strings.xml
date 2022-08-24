@@ -6,4 +6,6 @@
     <string name="game_over_message">Times up! your score was:
     %1$d
     </string>
+    <string name="about_title">Info </string>
+    <string name="about_message">Copyright oussama</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -11,6 +12,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import kotlin.system.measureTimeMillis
 
 
@@ -71,9 +73,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId==R.id.about_item){
-            //showInfo()
+            showInfo()
         }
         return true
+    }
+
+
+    private fun showInfo(){
+        val dialogTitle = "${getString(R.string.about_title)}  ${BuildConfig.VERSION_NAME} "
+        val dialogMessage = getString(R.string.about_message)
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(dialogTitle)
+        builder.setMessage(dialogMessage)
+        builder.create().show()
     }
 
 
